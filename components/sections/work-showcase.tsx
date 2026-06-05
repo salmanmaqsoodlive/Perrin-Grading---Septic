@@ -36,7 +36,7 @@ function BeforeAfter() {
     >
       {/* After (full) */}
       <Image
-        src="/dirt.jpg"
+        src="/gallery/work-20.jpg"
         alt="After grading"
         fill
         sizes="(max-width:1024px) 100vw, 60vw"

@@ -38,26 +38,45 @@ export function Navbar() {
       initial={{ y: -80, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
       transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
-      className="fixed inset-x-0 top-0 z-50 flex flex-col items-center"
+      className="fixed inset-x-0 top-0 z-50"
     >
       <div
         className={cn(
-          "mx-auto mt-3 flex w-fit max-w-[calc(100%-1.5rem)] items-center gap-4 rounded-full px-4 py-2.5 transition-all duration-500 sm:mt-4 sm:gap-6 sm:px-5",
+          "mx-auto mt-3 flex max-w-7xl items-center justify-between gap-4 rounded-full px-4 py-2.5 transition-all duration-500 sm:mt-4 sm:px-5",
           scrolled
-            ? "bg-ink/80 shadow-[0_10px_40px_-15px_rgba(11,12,14,0.45)] backdrop-blur-xl ring-1 ring-white/10 sm:mx-4"
+            ? "bg-white shadow-[0_10px_40px_-15px_rgba(11,12,14,0.25)] backdrop-blur-xl ring-1 ring-black/5 sm:mx-4"
             : "bg-transparent sm:mx-6"
         )}
       >
         {/* Brand */}
-        <Link href="/" className="group flex items-center">
-          <Image
-            src="/logo.png"
-            alt={site.legalName}
-            width={410}
-            height={484}
-            priority
-            className="h-12 w-auto object-contain transition-transform duration-500 group-hover:scale-105"
-          />
+        <Link href="/" className="group flex items-center gap-3">
+          <span className="relative grid h-11 w-11 place-items-center overflow-hidden rounded-2xl bg-ink shadow-soft ring-1 ring-white/10">
+            <Image
+              src="/logo.png"
+              alt={site.legalName}
+              width={44}
+              height={44}
+              className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-110"
+            />
+          </span>
+          <span className="flex flex-col leading-none">
+            <span
+              className={cn(
+                "font-display text-[15px] font-bold tracking-tight transition-colors",
+                scrolled || open ? "text-ink" : "text-white"
+              )}
+            >
+              Perrin&apos;s
+            </span>
+            <span
+              className={cn(
+                "text-[11px] font-medium tracking-wide transition-colors",
+                scrolled || open ? "text-ink/55" : "text-white/70"
+              )}
+            >
+              Grading, Septic &amp; Earthwork
+            </span>
+          </span>
         </Link>
 
         {/* Desktop nav */}
@@ -71,15 +90,14 @@ export function Navbar() {
               <Link
                 key={item.href}
                 href={item.href}
-                className="relative rounded-full px-4 py-2 text-sm font-medium text-white/80 transition-colors hover:text-white"
-              >
-                {active && (
-                  <motion.span
-                    layoutId="nav-pill"
-                    className="absolute inset-0 -z-0 rounded-full bg-white/15"
-                    transition={{ type: "spring", stiffness: 380, damping: 30 }}
-                  />
+                className={cn(
+                  "relative rounded-full px-4 py-2 text-sm transition-colors",
+                  active ? "font-bold" : "font-medium",
+                  scrolled
+                    ? "text-ink/70 hover:text-ink"
+                    : "text-white/80 hover:text-white"
                 )}
+              >
                 <span className="relative z-10">{item.label}</span>
               </Link>
             );
@@ -92,7 +110,7 @@ export function Navbar() {
             href={site.phoneHref}
             size="sm"
             variant="primary"
-            className="hidden sm:inline-flex"
+            className="hidden shadow-none hover:shadow-none sm:inline-flex"
           >
             <Phone className="h-4 w-4" />
             <span className="hidden md:inline">{site.phone}</span>
@@ -101,7 +119,12 @@ export function Navbar() {
           <button
             aria-label={open ? "Close menu" : "Open menu"}
             onClick={() => setOpen((v) => !v)}
-            className="grid h-11 w-11 place-items-center rounded-full bg-white/10 text-white transition-colors hover:bg-white/20 lg:hidden"
+            className={cn(
+              "grid h-11 w-11 place-items-center rounded-full transition-colors lg:hidden",
+              scrolled || open
+                ? "bg-ink/[0.06] text-ink hover:bg-ink/10"
+                : "bg-white/10 text-white hover:bg-white/20"
+            )}
           >
             {open ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
           </button>
@@ -153,19 +176,13 @@ export function Navbar() {
                       <Link
                         href={item.href}
                         className={cn(
-                          "flex items-center justify-between rounded-2xl px-5 py-4 text-lg font-semibold transition-colors",
+                          "flex items-center justify-between rounded-2xl px-5 py-4 text-lg transition-colors",
                           active
-                            ? "bg-brand-red/10 text-ink"
-                            : "text-ink/70 hover:bg-ink/[0.04]"
+                            ? "font-bold text-ink"
+                            : "font-semibold text-ink/70 hover:bg-ink/[0.04]"
                         )}
                       >
                         {item.label}
-                        <span
-                          className={cn(
-                            "h-2 w-2 rounded-full transition-colors",
-                            active ? "bg-brand-red" : "bg-ink/15"
-                          )}
-                        />
                       </Link>
                     </motion.li>
                   );
