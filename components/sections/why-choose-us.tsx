@@ -33,7 +33,7 @@ export function WhyChooseUs() {
             <div className="relative">
               <div className="relative aspect-[4/5] overflow-hidden rounded-5xl shadow-card ring-1 ring-black/5">
                 <Image
-                  src="/gallery/work-20.jpg"
+                  src="/dirt.jpg"
                   alt="Perrin's crew operating equipment on a job site"
                   fill
                   sizes="(max-width:1024px) 100vw, 50vw"

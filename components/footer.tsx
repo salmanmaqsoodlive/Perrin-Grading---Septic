@@ -29,7 +29,7 @@ export function Footer() {
             <Link href="/" className="flex items-center gap-3">
               <span className="grid h-12 w-12 place-items-center overflow-hidden rounded-2xl ring-1 ring-white/15">
                 <Image
-                  src="/logo.jpg"
+                  src="/logo.png"
                   alt={site.legalName}
                   width={48}
                   height={48}

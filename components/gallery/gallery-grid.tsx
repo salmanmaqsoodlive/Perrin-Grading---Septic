@@ -121,7 +121,7 @@ export function GalleryGrid() {
                 height={720}
                 loading="lazy"
                 sizes="(max-width:640px) 100vw, (max-width:1024px) 50vw, 33vw"
-                className="h-auto w-full object-cover transition-transform duration-[1.1s] ease-out group-hover:scale-[1.08]"
+                className="h-60 w-full object-cover transition-transform duration-[1.1s] ease-out group-hover:scale-[1.08] sm:h-64 lg:h-72"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-ink/80 via-ink/10 to-transparent opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
               <div className="absolute inset-x-0 bottom-0 flex translate-y-3 items-end justify-between p-5 opacity-0 transition-all duration-500 group-hover:translate-y-0 group-hover:opacity-100">

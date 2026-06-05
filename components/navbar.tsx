@@ -38,45 +38,26 @@ export function Navbar() {
       initial={{ y: -80, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
       transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
-      className="fixed inset-x-0 top-0 z-50"
+      className="fixed inset-x-0 top-0 z-50 flex flex-col items-center"
     >
       <div
         className={cn(
-          "mx-auto mt-3 flex max-w-7xl items-center justify-between gap-4 rounded-full px-4 py-2.5 transition-all duration-500 sm:mt-4 sm:px-5",
+          "mx-auto mt-3 flex w-fit max-w-[calc(100%-1.5rem)] items-center gap-4 rounded-full px-4 py-2.5 transition-all duration-500 sm:mt-4 sm:gap-6 sm:px-5",
           scrolled
-            ? "bg-white/80 shadow-[0_10px_40px_-15px_rgba(11,12,14,0.25)] backdrop-blur-xl ring-1 ring-black/5 sm:mx-4"
+            ? "bg-ink/80 shadow-[0_10px_40px_-15px_rgba(11,12,14,0.45)] backdrop-blur-xl ring-1 ring-white/10 sm:mx-4"
             : "bg-transparent sm:mx-6"
         )}
       >
         {/* Brand */}
-        <Link href="/" className="group flex items-center gap-3">
-          <span className="relative grid h-11 w-11 place-items-center overflow-hidden rounded-2xl bg-ink shadow-soft ring-1 ring-white/10">
-            <Image
-              src="/logo.jpg"
-              alt={site.legalName}
-              width={44}
-              height={44}
-              className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-110"
-            />
-          </span>
-          <span className="flex flex-col leading-none">
-            <span
-              className={cn(
-                "font-display text-[15px] font-bold tracking-tight transition-colors",
-                scrolled || open ? "text-ink" : "text-white"
-              )}
-            >
-              Perrin&apos;s
-            </span>
-            <span
-              className={cn(
-                "text-[11px] font-medium tracking-wide transition-colors",
-                scrolled || open ? "text-ink/55" : "text-white/70"
-              )}
-            >
-              Grading &amp; Septic
-            </span>
-          </span>
+        <Link href="/" className="group flex items-center">
+          <Image
+            src="/logo.png"
+            alt={site.legalName}
+            width={410}
+            height={484}
+            priority
+            className="h-12 w-auto object-contain transition-transform duration-500 group-hover:scale-105"
+          />
         </Link>
 
         {/* Desktop nav */}
@@ -90,20 +71,12 @@ export function Navbar() {
               <Link
                 key={item.href}
                 href={item.href}
-                className={cn(
-                  "relative rounded-full px-4 py-2 text-sm font-medium transition-colors",
-                  scrolled
-                    ? "text-ink/70 hover:text-ink"
-                    : "text-white/80 hover:text-white"
-                )}
+                className="relative rounded-full px-4 py-2 text-sm font-medium text-white/80 transition-colors hover:text-white"
               >
                 {active && (
                   <motion.span
                     layoutId="nav-pill"
-                    className={cn(
-                      "absolute inset-0 -z-0 rounded-full",
-                      scrolled ? "bg-ink/[0.06]" : "bg-white/15"
-                    )}
+                    className="absolute inset-0 -z-0 rounded-full bg-white/15"
                     transition={{ type: "spring", stiffness: 380, damping: 30 }}
                   />
                 )}
@@ -128,12 +101,7 @@ export function Navbar() {
           <button
             aria-label={open ? "Close menu" : "Open menu"}
             onClick={() => setOpen((v) => !v)}
-            className={cn(
-              "grid h-11 w-11 place-items-center rounded-full transition-colors lg:hidden",
-              scrolled || open
-                ? "bg-ink/[0.06] text-ink hover:bg-ink/10"
-                : "bg-white/10 text-white hover:bg-white/20"
-            )}
+            className="grid h-11 w-11 place-items-center rounded-full bg-white/10 text-white transition-colors hover:bg-white/20 lg:hidden"
           >
             {open ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
           </button>

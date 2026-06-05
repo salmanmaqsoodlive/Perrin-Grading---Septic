@@ -27,7 +27,7 @@ export function Hero() {
       {/* Parallax background */}
       <motion.div style={{ y, scale }} className="absolute inset-0">
         <Image
-          src="/gallery/work-09.jpg"
+          src="/hero.jpg"
           alt="Land grading and septic work by Perrin's"
           fill
           priority
