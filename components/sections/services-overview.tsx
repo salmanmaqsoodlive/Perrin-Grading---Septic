@@ -17,8 +17,8 @@ export function ServicesOverview() {
           accent="green"
           title={
             <>
-              Full-service grading, septic
-              <br className="hidden sm:block" /> &amp; earthwork
+              Full-Service Grading, Septic
+              <br className="hidden sm:block" /> &amp; Earthwork
             </>
           }
           description="From the first cut of dirt to a finished, draining lot — we handle the heavy lifting so your project starts on solid ground."

@@ -51,7 +51,7 @@ export function WhyChooseUs() {
                 className="absolute -bottom-6 -left-4 w-56 rounded-4xl bg-white/70 p-5 shadow-card backdrop-blur-xl ring-1 ring-white/60 sm:-left-8"
               >
                 <p className="font-display text-3xl font-extrabold text-ink">
-                  25+ yrs
+                  25+ Years
                 </p>
                 <p className="mt-1 text-sm text-ink/60">
                   of honest dirt work in this community
@@ -68,7 +68,7 @@ export function WhyChooseUs() {
               align="left"
               eyebrow="Why choose us"
               accent="red"
-              title="The contractor neighbors actually recommend"
+              title="The Contractor Neighbors Actually Recommend"
               description="We're not the biggest outfit in town — we're the one that shows up, does it right, and stands behind it."
             />
 

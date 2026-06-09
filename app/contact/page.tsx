@@ -108,7 +108,7 @@ export default function ContactPage() {
                         <Navigation className="h-6 w-6" />
                       </span>
                       <p className="mt-3 font-display text-lg font-bold">
-                        Serving the local region
+                        Asheville, North Carolina
                       </p>
                       <p className="mt-1 text-sm text-white/70">
                         {site.address}

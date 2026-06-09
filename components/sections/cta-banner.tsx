@@ -39,7 +39,7 @@ export function CTABanner({
             Ready when you are
           </span>
           <h2 className="mt-5 font-display text-3xl font-extrabold leading-tight tracking-tight text-white text-balance sm:text-4xl lg:text-5xl">
-            Let&apos;s get your project on solid ground.
+            Let&apos;s Get Your Project on Solid Ground.
           </h2>
           <p className="mx-auto mt-5 max-w-xl text-base leading-relaxed text-white/70 sm:text-lg">
             Free, no-pressure estimates. Tell us about your land, grading, or

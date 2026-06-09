@@ -14,7 +14,7 @@ import {
 export const metadata: Metadata = {
   title: "Services",
   description:
-    "Land grading, septic system installation, septic repair, excavation, land clearing, and hauling — full-service earthwork from Perrin's Grading & Septic LLC.",
+    "Land grading, septic installation & repair, excavation, land clearing, and hauling — full-service earthwork from Perrin's Grading & Septic LLC.",
 };
 
 const process = [

@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Quote, Star } from "lucide-react";
+import { Star } from "lucide-react";
 import { SectionHeading } from "@/components/ui/section-heading";
 import { StaggerGroup, staggerItem } from "@/components/ui/reveal";
 import { testimonials } from "@/data/site";
@@ -14,7 +14,7 @@ export function Testimonials() {
         <SectionHeading
           eyebrow="Kind words"
           accent="red"
-          title="People trust us with their property"
+          title="People Trust Us with Their Property"
           description="Don't take our word for it — here's what homeowners and builders say after we've finished the job."
         />
 
@@ -27,8 +27,7 @@ export function Testimonials() {
               transition={{ type: "spring", stiffness: 280, damping: 22 }}
               className="relative flex flex-col rounded-4xl border border-black/[0.06] bg-white/70 p-8 shadow-soft backdrop-blur-sm transition-shadow hover:shadow-card"
             >
-              <Quote className="h-9 w-9 text-brand-red/20" />
-              <div className="mt-3 flex">
+              <div className="flex">
                 {[...Array(5)].map((_, i) => (
                   <Star
                     key={i}

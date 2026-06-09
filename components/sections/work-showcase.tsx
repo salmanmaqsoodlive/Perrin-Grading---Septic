@@ -92,7 +92,7 @@ export function WorkShowcase() {
               align="left"
               eyebrow="Real results"
               accent="blue"
-              title="From overgrown to build-ready"
+              title="From Overgrown to Build-Ready"
               description="Drag the slider to see how raw, unusable land becomes a clean, properly graded site ready for a home, septic system, or driveway."
             />
             <ul className="mt-4 space-y-4">

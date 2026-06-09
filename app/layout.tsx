@@ -78,7 +78,7 @@ const orgSchema = {
   slogan: site.slogan,
   url: siteUrl,
   image: `${siteUrl}/gallery/work-09.jpg`,
-  areaServed: "Local & surrounding region",
+  areaServed: "Asheville, NC & surrounding areas",
   priceRange: "$$",
 };
 
