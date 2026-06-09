@@ -80,9 +80,9 @@ function BeforeAfter() {
 
 export function WorkShowcase() {
   return (
-    <section className="relative overflow-hidden bg-cream py-24 sm:py-32">
+    <section className="relative overflow-hidden bg-cream py-10 sm:py-14">
       <div className="container-px">
-        <div className="grid items-center gap-14 lg:grid-cols-[1.2fr_1fr]">
+        <div className="grid items-center gap-8 lg:grid-cols-[1.2fr_1fr]">
           <Reveal direction="right">
             <BeforeAfter />
           </Reveal>
@@ -95,7 +95,7 @@ export function WorkShowcase() {
               title="From overgrown to build-ready"
               description="Drag the slider to see how raw, unusable land becomes a clean, properly graded site ready for a home, septic system, or driveway."
             />
-            <ul className="mt-8 space-y-4">
+            <ul className="mt-4 space-y-4">
               {[
                 "Proper slope &amp; positive drainage every time",
                 "Compacted, build-ready surfaces",

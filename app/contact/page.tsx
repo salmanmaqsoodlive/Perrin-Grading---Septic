@@ -52,7 +52,7 @@ export default function ContactPage() {
         image="/gallery/work-15.jpg"
       />
 
-      <section className="bg-white py-20 sm:py-28">
+      <section className="bg-white py-10 sm:py-14">
         <div className="container-px">
           {/* Contact cards */}
           <StaggerGroup className="grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
@@ -86,7 +86,7 @@ export default function ContactPage() {
           </StaggerGroup>
 
           {/* Form + info */}
-          <div className="mt-14 grid gap-10 lg:grid-cols-[1.1fr_1fr]">
+          <div className="mt-6 grid gap-8 lg:grid-cols-[1.1fr_1fr]">
             <Reveal direction="right">
               <ContactForm />
             </Reveal>

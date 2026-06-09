@@ -10,7 +10,7 @@ import { ArrowRight } from "lucide-react";
 
 export function ServicesOverview() {
   return (
-    <section className="relative overflow-hidden bg-cream py-24 sm:py-32">
+    <section className="relative overflow-hidden bg-cream py-10 sm:py-14">
       <div className="container-px">
         <SectionHeading
           eyebrow="What we do"
@@ -24,13 +24,13 @@ export function ServicesOverview() {
           description="From the first cut of dirt to a finished, draining lot — we handle the heavy lifting so your project starts on solid ground."
         />
 
-        <StaggerGroup className="mt-16 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-          {services.map((service) => (
+        <StaggerGroup className="mt-6 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+          {services.slice(0, 3).map((service) => (
             <ServiceCard key={service.slug} service={service} />
           ))}
         </StaggerGroup>
 
-        <Reveal className="mt-14 flex justify-center" delay={0.1}>
+        <Reveal className="mt-6 flex justify-center" delay={0.1}>
           <Button href="/services" size="lg" variant="dark">
             Explore all services
             <ArrowRight className="h-5 w-5 transition-transform group-hover:translate-x-1" />

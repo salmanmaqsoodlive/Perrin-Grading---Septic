@@ -37,7 +37,7 @@ export function Footer() {
                 />
               </span>
               <span className="flex flex-col leading-none">
-                <span className="font-display text-lg font-bold">
+                <span className="font-display text-lg font-bold uppercase tracking-[0.3em]">
                   Perrin&apos;s
                 </span>
                 <span className="text-xs text-white/55">

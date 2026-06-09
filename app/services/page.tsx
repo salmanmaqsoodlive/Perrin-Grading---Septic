@@ -52,7 +52,7 @@ export default function ServicesPage() {
       />
 
       {/* Services grid */}
-      <section className="bg-white py-24 sm:py-32">
+      <section className="bg-white py-10 sm:py-14">
         <div className="container-px">
           <SectionHeading
             eyebrow="Our services"
@@ -60,14 +60,14 @@ export default function ServicesPage() {
             title="Everything your site needs"
             description="Each job is handled by experienced operators with the right equipment — no subcontracting your project out to strangers."
           />
-          <div className="mt-16">
+          <div className="mt-6">
             <ServicesList detailed />
           </div>
         </div>
       </section>
 
       {/* Process */}
-      <section className="relative overflow-hidden bg-ink py-24 text-white noise-overlay sm:py-32">
+      <section className="relative overflow-hidden bg-ink py-10 text-white noise-overlay sm:py-14">
         <div className="pointer-events-none absolute -right-20 top-10 h-72 w-72 rounded-full bg-brand-green/20 blur-[120px]" />
         <div className="pointer-events-none absolute -left-20 bottom-10 h-72 w-72 rounded-full bg-brand-blue/20 blur-[120px]" />
         <div className="container-px relative z-10">
@@ -78,7 +78,7 @@ export default function ServicesPage() {
             title={<span className="text-white">Simple, straightforward, no surprises</span>}
             description="From first call to final walkthrough, here's exactly what working with us looks like."
           />
-          <StaggerGroup className="mt-16 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+          <StaggerGroup className="mt-6 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
             {process.map((step, i) => {
               const Icon = step.icon;
               return (

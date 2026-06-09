@@ -21,7 +21,7 @@ export default function GalleryPage() {
         image="/gallery/368.jpeg"
       />
 
-      <section className="bg-cream py-20 sm:py-28">
+      <section className="bg-cream py-10 sm:py-14">
         <div className="container-px">
           <GalleryGrid />
         </div>

@@ -25,9 +25,9 @@ const accent = {
 
 export function WhyChooseUs() {
   return (
-    <section className="relative overflow-hidden bg-white py-24 sm:py-32">
+    <section className="relative overflow-hidden bg-white py-10 sm:py-14">
       <div className="container-px">
-        <div className="grid items-center gap-16 lg:grid-cols-2">
+        <div className="grid items-center gap-8 lg:grid-cols-2">
           {/* Left: image collage */}
           <Reveal direction="right">
             <div className="relative">
@@ -72,7 +72,7 @@ export function WhyChooseUs() {
               description="We're not the biggest outfit in town — we're the one that shows up, does it right, and stands behind it."
             />
 
-            <StaggerGroup className="mt-10 grid gap-4 sm:grid-cols-2">
+            <StaggerGroup className="mt-6 grid gap-4 sm:grid-cols-2">
               {whyChooseUs.map((item, i) => {
                 const Icon = icons[i];
                 return (

@@ -8,7 +8,7 @@ import { testimonials } from "@/data/site";
 
 export function Testimonials() {
   return (
-    <section className="relative overflow-hidden bg-white py-24 sm:py-32">
+    <section className="relative overflow-hidden bg-white py-10 sm:py-14">
       <div className="pointer-events-none absolute -right-20 top-10 h-72 w-72 rounded-full bg-brand-red/[0.06] blur-3xl" />
       <div className="container-px relative">
         <SectionHeading
@@ -18,7 +18,7 @@ export function Testimonials() {
           description="Don't take our word for it — here's what homeowners and builders say after we've finished the job."
         />
 
-        <StaggerGroup className="mt-16 grid gap-6 md:grid-cols-2 lg:grid-cols-2">
+        <StaggerGroup className="mt-6 grid gap-6 md:grid-cols-2 lg:grid-cols-2">
           {testimonials.map((t) => (
             <motion.figure
               key={t.name}

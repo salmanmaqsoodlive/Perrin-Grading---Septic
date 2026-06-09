@@ -50,8 +50,8 @@ export default function AboutPage() {
       />
 
       {/* Story */}
-      <section className="bg-white py-24 sm:py-32">
-        <div className="container-px grid items-center gap-16 lg:grid-cols-2">
+      <section className="bg-white py-10 sm:py-14">
+        <div className="container-px grid items-center gap-8 lg:grid-cols-2">
           <Reveal direction="right">
             <div className="relative">
               <div className="relative aspect-[4/5] overflow-hidden rounded-5xl shadow-card ring-1 ring-black/5">
@@ -82,7 +82,7 @@ export default function AboutPage() {
               title="A contractor you'd be glad to have as a neighbor"
               description="Perrin's started with one truck and a simple idea — that grading and septic work could be done honestly, skillfully, and without the runaround."
             />
-            <div className="mt-6 space-y-4 text-ink/70 leading-relaxed">
+            <div className="mt-4 space-y-4 text-ink/70 leading-relaxed">
               <Reveal delay={0.05}>
                 <p>
                   Over the years we&apos;ve grown from a single dump truck into a
@@ -106,7 +106,7 @@ export default function AboutPage() {
       </section>
 
       {/* Slogan highlight */}
-      <section className="relative overflow-hidden bg-ink py-28 text-center noise-overlay">
+      <section className="relative overflow-hidden bg-ink py-14 text-center noise-overlay">
         <div className="pointer-events-none absolute left-1/2 top-1/2 h-80 w-[50rem] -translate-x-1/2 -translate-y-1/2 rounded-full bg-brand-red/15 blur-[140px]" />
         <div className="container-px relative z-10">
           <Reveal>
@@ -130,14 +130,14 @@ export default function AboutPage() {
       </section>
 
       {/* Values */}
-      <section className="bg-cream py-24 sm:py-32">
+      <section className="bg-cream py-10 sm:py-14">
         <div className="container-px">
           <SectionHeading
             eyebrow="What we stand for"
             accent="green"
             title="The values behind every job"
           />
-          <StaggerGroup className="mt-14 grid gap-6 md:grid-cols-3">
+          <StaggerGroup className="mt-6 grid gap-6 md:grid-cols-3">
             {values.map((v) => {
               const Icon = v.icon;
               return (
@@ -161,7 +161,7 @@ export default function AboutPage() {
       </section>
 
       {/* Timeline */}
-      <section className="bg-white py-24 sm:py-32">
+      <section className="bg-white py-10 sm:py-14">
         <div className="container-px">
           <SectionHeading
             eyebrow="Our journey"
@@ -170,10 +170,10 @@ export default function AboutPage() {
             description="The same hands-on values, scaled up one honest job at a time."
           />
 
-          <div className="relative mx-auto mt-16 max-w-3xl">
+          <div className="relative mx-auto mt-6 max-w-3xl">
             {/* vertical line */}
             <div className="absolute left-[19px] top-2 h-full w-px bg-brand-red/40 sm:left-1/2 sm:-translate-x-px" />
-            <div className="space-y-10">
+            <div className="space-y-6">
               {timeline.map((item, i) => (
                 <Reveal key={item.year} delay={i * 0.05}>
                   <div

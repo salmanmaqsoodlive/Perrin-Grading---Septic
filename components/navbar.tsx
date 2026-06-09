@@ -45,7 +45,7 @@ export function Navbar() {
           "mx-auto mt-3 flex max-w-7xl items-center justify-between gap-4 rounded-full px-4 py-1 transition-all duration-500 sm:mt-4 sm:px-5",
           scrolled
             ? "bg-white shadow-[0_10px_40px_-15px_rgba(11,12,14,0.25)] backdrop-blur-xl ring-1 ring-black/5 sm:mx-4"
-            : "bg-transparent sm:mx-6"
+            : "bg-transparent sm:mx-6",
         )}
       >
         {/* Brand */}
@@ -54,16 +54,16 @@ export function Navbar() {
             <Image
               src="/logo.png"
               alt={site.legalName}
-              width={56}
-              height={56}
+              width={64}
+              height={64}
               className="h-full w-full object-contain transition-transform duration-500 group-hover:scale-110"
             />
           </span>
           <span className="flex flex-col leading-none">
             <span
               className={cn(
-                "font-display text-[15px] font-bold tracking-tight transition-colors",
-                scrolled || open ? "text-ink" : "text-white"
+                "font-display text-[15px] font-bold uppercase tracking-[0.3em] transition-colors",
+                scrolled || open ? "text-ink" : "text-white",
               )}
             >
               Perrin&apos;s
@@ -71,7 +71,7 @@ export function Navbar() {
             <span
               className={cn(
                 "text-[11px] font-medium tracking-wide transition-colors",
-                scrolled || open ? "text-ink/55" : "text-white/70"
+                scrolled || open ? "text-ink/55" : "text-white/70",
               )}
             >
               Grading, Septic &amp; Earthwork
@@ -95,7 +95,7 @@ export function Navbar() {
                   active ? "font-bold" : "font-medium",
                   scrolled
                     ? "text-ink/70 hover:text-ink"
-                    : "text-white/80 hover:text-white"
+                    : "text-white/80 hover:text-white",
                 )}
               >
                 <span className="relative z-10">{item.label}</span>
@@ -123,7 +123,7 @@ export function Navbar() {
               "grid h-9 w-9 place-items-center rounded-full transition-colors lg:hidden",
               scrolled || open
                 ? "bg-ink/[0.06] text-ink hover:bg-ink/10"
-                : "bg-white/10 text-white hover:bg-white/20"
+                : "bg-white/10 text-white hover:bg-white/20",
             )}
           >
             {open ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
@@ -156,7 +156,9 @@ export function Navbar() {
                 initial="hidden"
                 animate="show"
                 variants={{
-                  show: { transition: { staggerChildren: 0.06, delayChildren: 0.1 } },
+                  show: {
+                    transition: { staggerChildren: 0.06, delayChildren: 0.1 },
+                  },
                 }}
                 className="flex flex-col gap-1"
               >
@@ -179,7 +181,7 @@ export function Navbar() {
                           "flex items-center justify-between rounded-2xl px-5 py-4 text-lg transition-colors",
                           active
                             ? "font-bold text-ink"
-                            : "font-semibold text-ink/70 hover:bg-ink/[0.04]"
+                            : "font-semibold text-ink/70 hover:bg-ink/[0.04]",
                         )}
                       >
                         {item.label}

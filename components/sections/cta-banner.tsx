@@ -12,7 +12,7 @@ export function CTABanner({
   image?: string;
 }) {
   return (
-    <section className="container-px py-20 sm:py-24">
+    <section className="container-px py-10 sm:py-12">
       <motion.div
         initial={{ opacity: 0, y: 40 }}
         whileInView={{ opacity: 1, y: 0 }}

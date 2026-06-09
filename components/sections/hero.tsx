@@ -97,7 +97,7 @@ export function Hero() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 1.05 }}
-            className="mt-9 flex flex-col gap-3 sm:flex-row sm:items-center"
+            className="mt-6 flex flex-col gap-3 sm:flex-row sm:items-center"
           >
             <Button href="/contact" size="lg" variant="primary">
               Get a Free Estimate
@@ -114,7 +114,7 @@ export function Hero() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.7, delay: 1.25 }}
-            className="mt-12 flex flex-wrap items-center gap-x-8 gap-y-4"
+            className="mt-6 flex flex-wrap items-center gap-x-8 gap-y-4"
           >
             <div className="flex items-center gap-2">
               <div className="flex">

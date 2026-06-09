@@ -7,7 +7,7 @@ import { stats } from "@/data/site";
 
 export function Stats() {
   return (
-    <section className="relative overflow-hidden bg-ink py-24 text-white noise-overlay sm:py-28">
+    <section className="relative overflow-hidden bg-ink py-10 text-white noise-overlay sm:py-14">
       {/* bg image */}
       <div className="absolute inset-0">
         <Image
@@ -27,7 +27,7 @@ export function Stats() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="mx-auto mb-14 max-w-2xl text-center font-display text-2xl font-bold tracking-tight sm:text-3xl"
+          className="mx-auto mb-6 max-w-2xl text-center font-display text-2xl font-bold tracking-tight sm:text-3xl"
         >
           A track record measured in finished jobs &amp; happy neighbors.
         </motion.p>
