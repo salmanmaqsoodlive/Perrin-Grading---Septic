@@ -36,7 +36,7 @@ function BeforeAfter() {
     >
       {/* After (full) */}
       <Image
-        src="/gallery/work-20.jpg"
+        src="/after.jpg"
         alt="After grading"
         fill
         sizes="(max-width:1024px) 100vw, 60vw"
@@ -53,7 +53,7 @@ function BeforeAfter() {
         style={{ clipPath: `inset(0 ${100 - pos}% 0 0)` }}
       >
         <Image
-          src="/gallery/work-02.jpg"
+          src="/before.jpg"
           alt="Before grading"
           fill
           sizes="(max-width:1024px) 100vw, 60vw"
