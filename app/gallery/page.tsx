@@ -18,7 +18,7 @@ export default function GalleryPage() {
         eyebrow="Our work"
         title="Real projects, real dirt, real results"
         description={`A look at ${galleryItems.length}+ completed grading, septic, and earthwork jobs. Every photo is work from our own crew.`}
-        image="/gallery/work-04.jpeg"
+        image="/gallery/368.jpeg"
       />
 
       <section className="bg-cream py-20 sm:py-28">
@@ -27,7 +27,7 @@ export default function GalleryPage() {
         </div>
       </section>
 
-      <CTABanner image="/gallery/work-40.jpg" />
+      <CTABanner image="/gallery/421.webp" />
     </>
   );
 }

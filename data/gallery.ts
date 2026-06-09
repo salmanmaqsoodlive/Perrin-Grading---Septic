@@ -1,336 +1,71 @@
-// Auto-generated gallery manifest — every project image in /public/gallery is shown on the Gallery page.
+// Curated gallery manifest — hand-picked high-resolution project photos.
+// Only sharp, full-resolution originals are used (the low-res `work-*` crops are retired).
+// `w`/`h` are the image's intrinsic pixel dimensions so the masonry can render each
+// photo uncropped at its true aspect ratio.
 export type GalleryItem = {
   src: string;
   category: string;
   title: string;
   alt: string;
+  w: number;
+  h: number;
 };
 
+const item = (
+  src: string,
+  category: string,
+  title: string,
+  w: number,
+  h: number
+): GalleryItem => ({
+  src: `/gallery/${src}`,
+  category,
+  title,
+  alt: `${title} — Perrin's Grading & Septic project`,
+  w,
+  h,
+});
+
 export const galleryItems: GalleryItem[] = [
-  {
-    "src": "/gallery/work-01.jpeg",
-    "category": "Land Grading",
-    "title": "Site Grading & Leveling",
-    "alt": "Site Grading & Leveling — Perrin's Grading & Septic project"
-  },
-  {
-    "src": "/gallery/work-02.jpg",
-    "category": "Septic Systems",
-    "title": "Septic System Install",
-    "alt": "Septic System Install — Perrin's Grading & Septic project"
-  },
-  {
-    "src": "/gallery/work-03.jpg",
-    "category": "Excavation",
-    "title": "Foundation Dig",
-    "alt": "Foundation Dig — Perrin's Grading & Septic project"
-  },
-  {
-    "src": "/gallery/work-04.jpeg",
-    "category": "Land Clearing",
-    "title": "Property Clearing",
-    "alt": "Property Clearing — Perrin's Grading & Septic project"
-  },
-  {
-    "src": "/gallery/work-05.jpg",
-    "category": "Equipment & Fleet",
-    "title": "Perrin Fleet",
-    "alt": "Perrin Fleet — Perrin's Grading & Septic project"
-  },
-  {
-    "src": "/gallery/work-06.jpg",
-    "category": "Land Grading",
-    "title": "Driveway Grade Work",
-    "alt": "Driveway Grade Work — Perrin's Grading & Septic project"
-  },
-  {
-    "src": "/gallery/work-07.jpeg",
-    "category": "Septic Systems",
-    "title": "Drain Field Layout",
-    "alt": "Drain Field Layout — Perrin's Grading & Septic project"
-  },
-  {
-    "src": "/gallery/work-08.jpg",
-    "category": "Excavation",
-    "title": "Trenching Work",
-    "alt": "Trenching Work — Perrin's Grading & Septic project"
-  },
-  {
-    "src": "/gallery/work-09.jpg",
-    "category": "Land Clearing",
-    "title": "Brush Removal",
-    "alt": "Brush Removal — Perrin's Grading & Septic project"
-  },
-  {
-    "src": "/gallery/work-10.jpg",
-    "category": "Equipment & Fleet",
-    "title": "On-Site Equipment",
-    "alt": "On-Site Equipment — Perrin's Grading & Septic project"
-  },
-  {
-    "src": "/gallery/work-11.jpg",
-    "category": "Land Grading",
-    "title": "Lot Grading",
-    "alt": "Lot Grading — Perrin's Grading & Septic project"
-  },
-  {
-    "src": "/gallery/work-12.jpg",
-    "category": "Septic Systems",
-    "title": "Tank Excavation",
-    "alt": "Tank Excavation — Perrin's Grading & Septic project"
-  },
-  {
-    "src": "/gallery/work-13.jpg",
-    "category": "Excavation",
-    "title": "Bulk Excavation",
-    "alt": "Bulk Excavation — Perrin's Grading & Septic project"
-  },
-  {
-    "src": "/gallery/work-14.jpeg",
-    "category": "Land Clearing",
-    "title": "Lot Clearing",
-    "alt": "Lot Clearing — Perrin's Grading & Septic project"
-  },
-  {
-    "src": "/gallery/work-15.jpg",
-    "category": "Equipment & Fleet",
-    "title": "Heavy Machinery",
-    "alt": "Heavy Machinery — Perrin's Grading & Septic project"
-  },
-  {
-    "src": "/gallery/work-16.jpg",
-    "category": "Land Grading",
-    "title": "Finish Grading",
-    "alt": "Finish Grading — Perrin's Grading & Septic project"
-  },
-  {
-    "src": "/gallery/work-17.jpg",
-    "category": "Septic Systems",
-    "title": "Septic Repair",
-    "alt": "Septic Repair — Perrin's Grading & Septic project"
-  },
-  {
-    "src": "/gallery/work-18.jpg",
-    "category": "Excavation",
-    "title": "Utility Trench",
-    "alt": "Utility Trench — Perrin's Grading & Septic project"
-  },
-  {
-    "src": "/gallery/work-19.jpg",
-    "category": "Land Clearing",
-    "title": "Tree & Stump Work",
-    "alt": "Tree & Stump Work — Perrin's Grading & Septic project"
-  },
-  {
-    "src": "/gallery/work-20.jpg",
-    "category": "Equipment & Fleet",
-    "title": "Job Site Setup",
-    "alt": "Job Site Setup — Perrin's Grading & Septic project"
-  },
-  {
-    "src": "/gallery/work-21.jpg",
-    "category": "Land Grading",
-    "title": "Pad Preparation",
-    "alt": "Pad Preparation — Perrin's Grading & Septic project"
-  },
-  {
-    "src": "/gallery/work-22.jpg",
-    "category": "Septic Systems",
-    "title": "System Inspection",
-    "alt": "System Inspection — Perrin's Grading & Septic project"
-  },
-  {
-    "src": "/gallery/work-23.jpg",
-    "category": "Excavation",
-    "title": "Cut & Fill",
-    "alt": "Cut & Fill — Perrin's Grading & Septic project"
-  },
-  {
-    "src": "/gallery/work-24.jpg",
-    "category": "Land Clearing",
-    "title": "Land Prep",
-    "alt": "Land Prep — Perrin's Grading & Septic project"
-  },
-  {
-    "src": "/gallery/work-25.webp",
-    "category": "Equipment & Fleet",
-    "title": "Bobcat at Work",
-    "alt": "Bobcat at Work — Perrin's Grading & Septic project"
-  },
-  {
-    "src": "/gallery/work-26.jpg",
-    "category": "Land Grading",
-    "title": "Slope Correction",
-    "alt": "Slope Correction — Perrin's Grading & Septic project"
-  },
-  {
-    "src": "/gallery/work-27.jpg",
-    "category": "Septic Systems",
-    "title": "Leach Field Work",
-    "alt": "Leach Field Work — Perrin's Grading & Septic project"
-  },
-  {
-    "src": "/gallery/work-28.jpg",
-    "category": "Excavation",
-    "title": "Earthmoving",
-    "alt": "Earthmoving — Perrin's Grading & Septic project"
-  },
-  {
-    "src": "/gallery/work-29.jpg",
-    "category": "Land Clearing",
-    "title": "Acreage Clearing",
-    "alt": "Acreage Clearing — Perrin's Grading & Septic project"
-  },
-  {
-    "src": "/gallery/work-30.jpg",
-    "category": "Equipment & Fleet",
-    "title": "Dump Truck Haul",
-    "alt": "Dump Truck Haul — Perrin's Grading & Septic project"
-  },
-  {
-    "src": "/gallery/work-31.jpg",
-    "category": "Land Grading",
-    "title": "Site Grading & Leveling",
-    "alt": "Site Grading & Leveling — Perrin's Grading & Septic project"
-  },
-  {
-    "src": "/gallery/work-32.jpg",
-    "category": "Septic Systems",
-    "title": "Septic System Install",
-    "alt": "Septic System Install — Perrin's Grading & Septic project"
-  },
-  {
-    "src": "/gallery/work-33.jpg",
-    "category": "Excavation",
-    "title": "Foundation Dig",
-    "alt": "Foundation Dig — Perrin's Grading & Septic project"
-  },
-  {
-    "src": "/gallery/work-34.jpg",
-    "category": "Land Clearing",
-    "title": "Property Clearing",
-    "alt": "Property Clearing — Perrin's Grading & Septic project"
-  },
-  {
-    "src": "/gallery/work-35.avif",
-    "category": "Equipment & Fleet",
-    "title": "Perrin Fleet",
-    "alt": "Perrin Fleet — Perrin's Grading & Septic project"
-  },
-  {
-    "src": "/gallery/work-36.jpg",
-    "category": "Land Grading",
-    "title": "Driveway Grade Work",
-    "alt": "Driveway Grade Work — Perrin's Grading & Septic project"
-  },
-  {
-    "src": "/gallery/work-37.jpg",
-    "category": "Septic Systems",
-    "title": "Drain Field Layout",
-    "alt": "Drain Field Layout — Perrin's Grading & Septic project"
-  },
-  {
-    "src": "/gallery/work-38.jpg",
-    "category": "Excavation",
-    "title": "Trenching Work",
-    "alt": "Trenching Work — Perrin's Grading & Septic project"
-  },
-  {
-    "src": "/gallery/work-39.jpg",
-    "category": "Land Clearing",
-    "title": "Brush Removal",
-    "alt": "Brush Removal — Perrin's Grading & Septic project"
-  },
-  {
-    "src": "/gallery/work-40.jpg",
-    "category": "Equipment & Fleet",
-    "title": "On-Site Equipment",
-    "alt": "On-Site Equipment — Perrin's Grading & Septic project"
-  },
-  {
-    "src": "/gallery/work-41.jpeg",
-    "category": "Land Grading",
-    "title": "Lot Grading",
-    "alt": "Lot Grading — Perrin's Grading & Septic project"
-  },
-  {
-    "src": "/gallery/work-42.jpg",
-    "category": "Septic Systems",
-    "title": "Tank Excavation",
-    "alt": "Tank Excavation — Perrin's Grading & Septic project"
-  },
-  {
-    "src": "/gallery/work-43.jpg",
-    "category": "Excavation",
-    "title": "Bulk Excavation",
-    "alt": "Bulk Excavation — Perrin's Grading & Septic project"
-  },
-  {
-    "src": "/gallery/work-44.jpg",
-    "category": "Land Clearing",
-    "title": "Lot Clearing",
-    "alt": "Lot Clearing — Perrin's Grading & Septic project"
-  },
-  {
-    "src": "/gallery/work-45.jpeg",
-    "category": "Equipment & Fleet",
-    "title": "Heavy Machinery",
-    "alt": "Heavy Machinery — Perrin's Grading & Septic project"
-  },
-  {
-    "src": "/gallery/work-46.jpg",
-    "category": "Land Grading",
-    "title": "Finish Grading",
-    "alt": "Finish Grading — Perrin's Grading & Septic project"
-  },
-  {
-    "src": "/gallery/work-47.jpg",
-    "category": "Septic Systems",
-    "title": "Septic Repair",
-    "alt": "Septic Repair — Perrin's Grading & Septic project"
-  },
-  {
-    "src": "/gallery/work-48.jpg",
-    "category": "Excavation",
-    "title": "Utility Trench",
-    "alt": "Utility Trench — Perrin's Grading & Septic project"
-  },
-  {
-    "src": "/gallery/work-49.jpg",
-    "category": "Land Clearing",
-    "title": "Tree & Stump Work",
-    "alt": "Tree & Stump Work — Perrin's Grading & Septic project"
-  },
-  {
-    "src": "/gallery/work-50.jpg",
-    "category": "Equipment & Fleet",
-    "title": "Job Site Setup",
-    "alt": "Job Site Setup — Perrin's Grading & Septic project"
-  },
-  {
-    "src": "/gallery/work-51.jpg",
-    "category": "Land Grading",
-    "title": "Pad Preparation",
-    "alt": "Pad Preparation — Perrin's Grading & Septic project"
-  },
-  {
-    "src": "/gallery/work-52.jpeg",
-    "category": "Septic Systems",
-    "title": "System Inspection",
-    "alt": "System Inspection — Perrin's Grading & Septic project"
-  },
-  {
-    "src": "/gallery/work-53.jpg",
-    "category": "Excavation",
-    "title": "Cut & Fill",
-    "alt": "Cut & Fill — Perrin's Grading & Septic project"
-  },
-  {
-    "src": "/gallery/work-54.jpeg",
-    "category": "Land Clearing",
-    "title": "Land Prep",
-    "alt": "Land Prep — Perrin's Grading & Septic project"
-  }
+  // —— Land Grading ——
+  item("177.jpeg", "Land Grading", "Finished Driveway & Lawn", 4032, 3024),
+  item("419.webp", "Land Grading", "Gravel Drive Through the Pines", 3024, 3024),
+  item("421.webp", "Land Grading", "Farm Driveway Grading", 3024, 3024),
+  item("289.jpeg", "Land Grading", "Driveway & Lot Grading", 4032, 3024),
+  item("368.jpeg", "Land Grading", "Hillside Site Grading", 4032, 3024),
+  item("1000001763.jpeg", "Land Grading", "New Gravel Road", 4032, 2268),
+  item("1000000228.jpeg", "Land Grading", "Road Grading & Base", 4032, 2268),
+
+  // —— Excavation & Earthwork ——
+  item("404.webp", "Excavation", "Excavator at Work", 3024, 3024),
+  item("IMG_1107.jpeg", "Excavation", "Cut & Fill Earthwork", 5712, 4284),
+  item("IMG_1106.jpeg", "Excavation", "Site Excavation & Haul-Off", 5712, 4284),
+  item("366.jpeg", "Excavation", "Bulk Excavation", 4032, 3024),
+  item("1000002623.jpeg", "Excavation", "Trenching & Earthwork", 2268, 4032),
+  item("405.webp", "Excavation", "Excavating a Building Site", 3024, 3024),
+  item("1000002638.jpeg", "Excavation", "Grading & Earthmoving", 4032, 2268),
+  item("1000001890.jpeg", "Excavation", "Culvert & Drainage Install", 4032, 2268),
+
+  // —— Septic Systems ——
+  item("1000002644.jpeg", "Septic Systems", "Septic Field Installation", 4032, 2268),
+  item("414.webp", "Septic Systems", "Distribution Box Set", 3024, 3024),
+  item("IMG_1192.jpeg", "Septic Systems", "Tank Installation", 5712, 4284),
+  item("IMG_1183.jpeg", "Septic Systems", "Tank Excavation & Set", 5712, 4284),
+  item("415.webp", "Septic Systems", "Risers & Connections", 3024, 3024),
+
+  // —— Pond Building & Repair ——
+  item("1000002657.jpeg", "Pond Building", "Finished Farm Pond", 4032, 2268),
+  item("1000002462.jpeg", "Pond Building", "Pond Lining & Repair", 4032, 2268),
+  item("1000001762.jpeg", "Pond Building", "Pond Bank Lining", 4032, 2268),
+
+  // —— Land Clearing ——
+  item("1000000085.jpeg", "Land Clearing", "Cleared & Ready Acreage", 4032, 2268),
+  item("436.webp", "Land Clearing", "Clearing & Access Road", 3024, 3024),
+
+  // —— Hauling & Fleet ——
+  item("742.jpeg", "Hauling & Fleet", "Gravel Delivery", 3072, 4080),
+  item("72.jpeg", "Hauling & Fleet", "Material Hauling", 4032, 3024),
+  item("959.jpeg", "Hauling & Fleet", "Skid Steer On Site", 4032, 2268),
 ];
 
 export const galleryCategories: string[] = [

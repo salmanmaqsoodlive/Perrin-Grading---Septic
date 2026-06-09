@@ -5,6 +5,7 @@ import {
   Shovel,
   TreePine,
   Truck,
+  Waves,
 } from "lucide-react";
 
 export const site = {
@@ -154,6 +155,23 @@ export const services: Service[] = [
     ],
     accent: "blue",
     image: "/gallery/work-30.jpg",
+  },
+  {
+    slug: "pond-building",
+    title: "Pond Building & Repair",
+    icon: Waves,
+    tagline: "Dug, sealed, and built to hold",
+    description:
+      "From new farm and recreational ponds to repairing leaks and failing dams, we excavate, shape, and seal water features that hold their level and last for years.",
+    features: [
+      "New pond design & excavation",
+      "Dam building & repair",
+      "Leak sealing & lining",
+      "Dredging & cleanouts",
+      "Shoreline & bank shaping",
+    ],
+    accent: "blue",
+    image: "/gallery/work-25.webp",
   },
 ];
 

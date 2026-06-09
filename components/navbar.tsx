@@ -42,7 +42,7 @@ export function Navbar() {
     >
       <div
         className={cn(
-          "mx-auto mt-3 flex max-w-7xl items-center justify-between gap-4 rounded-full px-4 py-2.5 transition-all duration-500 sm:mt-4 sm:px-5",
+          "mx-auto mt-3 flex max-w-7xl items-center justify-between gap-4 rounded-full px-4 py-1 transition-all duration-500 sm:mt-4 sm:px-5",
           scrolled
             ? "bg-white shadow-[0_10px_40px_-15px_rgba(11,12,14,0.25)] backdrop-blur-xl ring-1 ring-black/5 sm:mx-4"
             : "bg-transparent sm:mx-6"
@@ -50,13 +50,13 @@ export function Navbar() {
       >
         {/* Brand */}
         <Link href="/" className="group flex items-center gap-3">
-          <span className="relative grid h-11 w-11 place-items-center overflow-hidden rounded-2xl bg-ink shadow-soft ring-1 ring-white/10">
+          <span className="relative grid h-12 w-12 place-items-center sm:h-14 sm:w-14">
             <Image
               src="/logo.png"
               alt={site.legalName}
-              width={44}
-              height={44}
-              className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-110"
+              width={56}
+              height={56}
+              className="h-full w-full object-contain transition-transform duration-500 group-hover:scale-110"
             />
           </span>
           <span className="flex flex-col leading-none">
@@ -120,7 +120,7 @@ export function Navbar() {
             aria-label={open ? "Close menu" : "Open menu"}
             onClick={() => setOpen((v) => !v)}
             className={cn(
-              "grid h-11 w-11 place-items-center rounded-full transition-colors lg:hidden",
+              "grid h-9 w-9 place-items-center rounded-full transition-colors lg:hidden",
               scrolled || open
                 ? "bg-ink/[0.06] text-ink hover:bg-ink/10"
                 : "bg-white/10 text-white hover:bg-white/20"

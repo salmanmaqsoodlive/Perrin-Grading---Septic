@@ -97,10 +97,10 @@ export function GalleryGrid() {
         })}
       </div>
 
-      {/* Masonry */}
+      {/* Masonry — full-aspect, uncropped, high-resolution */}
       <motion.div
         layout
-        className="mt-12 columns-1 gap-5 sm:columns-2 lg:columns-3 [&>*]:mb-5"
+        className="mt-12 columns-1 gap-6 lg:columns-2 [&>*]:mb-6"
       >
         <AnimatePresence mode="popLayout">
           {filtered.map((item, idx) => (
@@ -117,13 +117,14 @@ export function GalleryGrid() {
               <Image
                 src={item.src}
                 alt={item.alt}
-                width={1280}
-                height={720}
+                width={item.w}
+                height={item.h}
+                quality={90}
                 loading="lazy"
-                sizes="(max-width:640px) 100vw, (max-width:1024px) 50vw, 33vw"
-                className="h-60 w-full object-cover transition-transform duration-[1.1s] ease-out group-hover:scale-[1.08] sm:h-64 lg:h-72"
+                sizes="(max-width:1024px) 100vw, 50vw"
+                className="h-auto w-full object-cover transition-transform duration-[1.1s] ease-out group-hover:scale-[1.05]"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-ink/80 via-ink/10 to-transparent opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
+              <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-ink/85 via-ink/10 to-transparent opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
               <div className="absolute inset-x-0 bottom-0 flex translate-y-3 items-end justify-between p-5 opacity-0 transition-all duration-500 group-hover:translate-y-0 group-hover:opacity-100">
                 <div className="text-left">
                   <span className="rounded-full bg-white/15 px-2.5 py-1 text-[10px] font-semibold uppercase tracking-wider text-white backdrop-blur">

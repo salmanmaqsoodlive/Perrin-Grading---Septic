@@ -27,18 +27,22 @@ export function Footer() {
           {/* Brand column */}
           <div className="lg:col-span-4">
             <Link href="/" className="flex items-center gap-3">
-              <span className="grid h-12 w-12 place-items-center overflow-hidden rounded-2xl ring-1 ring-white/15">
+              <span className="grid h-20 w-20 place-items-center">
                 <Image
                   src="/logo.png"
                   alt={site.legalName}
-                  width={48}
-                  height={48}
-                  className="h-full w-full object-cover"
+                  width={80}
+                  height={80}
+                  className="h-full w-full object-contain"
                 />
               </span>
               <span className="flex flex-col leading-none">
-                <span className="font-display text-lg font-bold">Perrin&apos;s</span>
-                <span className="text-xs text-white/55">Grading &amp; Septic LLC</span>
+                <span className="font-display text-lg font-bold">
+                  Perrin&apos;s
+                </span>
+                <span className="text-xs text-white/55">
+                  Grading &amp; Septic LLC
+                </span>
               </span>
             </Link>
             <p className="mt-5 max-w-sm text-sm leading-relaxed text-white/60">
@@ -101,7 +105,7 @@ export function Footer() {
               Services
             </h4>
             <ul className="mt-5 space-y-3">
-              {services.slice(0, 6).map((s) => (
+              {services.slice(0, 7).map((s) => (
                 <li key={s.slug}>
                   <Link
                     href="/services"
