@@ -16,7 +16,7 @@ export default function GalleryPage() {
       <PageHero
         crumb="Gallery"
         eyebrow="Our work"
-        title="Real projects, real dirt, real results"
+        title="Real Projects, Real Dirt, Real Results"
         description={`A look at ${galleryItems.length}+ completed grading, septic, and earthwork jobs. Every photo is work from our own crew.`}
         image="/gallery/368.jpeg"
       />

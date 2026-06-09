@@ -17,7 +17,7 @@ export const site = {
   phoneHref: "tel:+13369537045",
   email: "charlieperrin466@yahoo.com",
   emailHref: "mailto:charlieperrin466@yahoo.com",
-  address: "Serving Asheville Area",
+  address: "Serving Asheboro Area",
   hours: "Mon – Sat · 7:00 AM – 6:00 PM",
   serviceArea: [
     "Residential lots",
@@ -74,7 +74,7 @@ export const services: Service[] = [
     slug: "septic-installation-repair",
     title: "Septic Installation & Repair",
     icon: Droplets,
-    tagline: "Complete systems, installed and repaired right",
+    tagline: "COMPLETE SYSTEMS, INSTALLED & REPAIRED",
     description:
       "Full septic installs engineered for your soil and household, plus fast, lasting repairs when a system fails — tanks, drain fields, and lines laid out to pass inspection and perform for decades.",
     features: [

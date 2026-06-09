@@ -44,7 +44,7 @@ export default function AboutPage() {
       <PageHero
         crumb="About"
         eyebrow="Our Story"
-        title="Built by good people who love hard, honest work"
+        title="Built by Good People who Love Hard, Honest Work"
         description="Perrin's Grading & Septic is a family of operators who'd rather earn your trust than chase your money."
         image="/gallery/work-30.jpg"
       />
@@ -56,7 +56,7 @@ export default function AboutPage() {
             <div className="relative">
               <div className="relative aspect-[4/5] overflow-hidden rounded-5xl shadow-card ring-1 ring-black/5">
                 <Image
-                  src="/gallery/work-45.jpeg"
+                  src="/hero.jpg"
                   alt="Perrin's equipment and crew on a project"
                   fill
                   sizes="(max-width:1024px) 100vw, 50vw"
@@ -79,7 +79,8 @@ export default function AboutPage() {
               align="left"
               eyebrow="Who we are"
               accent="red"
-              title="A contractor you'd be glad to have as a neighbor"
+              className="[&_h2]:mb-3"
+              title="A Contractor You'd be Glad to Have as a Neighbor"
               description="Perrin's started with one truck and a simple idea — that grading and septic work could be done honestly, skillfully, and without the runaround."
             />
             <div className="mt-4 space-y-4 text-ink/70 leading-relaxed">
@@ -135,7 +136,7 @@ export default function AboutPage() {
           <SectionHeading
             eyebrow="What we stand for"
             accent="green"
-            title="The values behind every job"
+            title="The Values Behind Every Job"
           />
           <StaggerGroup className="mt-6 grid gap-6 md:grid-cols-3">
             {values.map((v) => {
@@ -166,7 +167,7 @@ export default function AboutPage() {
           <SectionHeading
             eyebrow="Our journey"
             accent="blue"
-            title="From one truck to a trusted name"
+            title="From One Truck to a Trusted Name"
             description="The same hands-on values, scaled up one honest job at a time."
           />
 

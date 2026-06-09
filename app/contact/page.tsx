@@ -47,7 +47,7 @@ export default function ContactPage() {
       <PageHero
         crumb="Contact"
         eyebrow="Get in touch"
-        title="Let's talk about your project"
+        title="Let's Talk about Your Project"
         description="Free estimates, honest advice, and a crew that actually answers the phone. Reach out and let's get started."
         image="/gallery/work-15.jpg"
       />
@@ -108,7 +108,7 @@ export default function ContactPage() {
                         <Navigation className="h-6 w-6" />
                       </span>
                       <p className="mt-3 font-display text-lg font-bold">
-                        Asheville, North Carolina
+                        Asheboro, North Carolina
                       </p>
                       <p className="mt-1 text-sm text-white/70">
                         {site.address}

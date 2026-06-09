@@ -46,7 +46,7 @@ export default function ServicesPage() {
       <PageHero
         crumb="Services"
         eyebrow="What we do"
-        title="Grading, septic & earthwork done the right way"
+        title="Grading, Septic & Earthwork Done The Right Way"
         description="One trusted crew for everything from the first cut of dirt to a finished, draining, build-ready site."
         image="/gallery/work-12.jpg"
       />
@@ -57,7 +57,7 @@ export default function ServicesPage() {
           <SectionHeading
             eyebrow="Our services"
             accent="red"
-            title="Everything your site needs"
+            title="Everything Your Site Needs"
             description="Each job is handled by experienced operators with the right equipment — no subcontracting your project out to strangers."
           />
           <div className="mt-6">
@@ -75,7 +75,7 @@ export default function ServicesPage() {
             eyebrow="How it works"
             accent="green"
             light
-            title={<span className="text-white">Simple, straightforward, no surprises</span>}
+            title={<span className="text-white">Simple, Straightforward, No Surprises</span>}
             description="From first call to final walkthrough, here's exactly what working with us looks like."
           />
           <StaggerGroup className="mt-6 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">

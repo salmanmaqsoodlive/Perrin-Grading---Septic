@@ -46,7 +46,7 @@ export function CTABanner({
             septic needs and we&apos;ll give you a straight answer.
           </p>
           <div className="mt-9 flex flex-col items-center justify-center gap-3 sm:flex-row">
-            <Button href="/contact" size="lg" variant="primary">
+            <Button href="/contact" size="lg" variant="light">
               Get a Free Estimate
               <ArrowRight className="h-5 w-5 transition-transform group-hover:translate-x-1" />
             </Button>

@@ -23,6 +23,20 @@ export function GalleryGrid() {
     [active]
   );
 
+  // Deterministic two-column masonry: each photo goes to the currently
+  // shortest column (greedy balance by aspect-height) so placement is
+  // predictable and the two columns stay close in total height.
+  const columns = useMemo(() => {
+    const cols: { item: GalleryItem; idx: number }[][] = [[], []];
+    const heights = [0, 0];
+    filtered.forEach((item, idx) => {
+      const c = heights[0] <= heights[1] ? 0 : 1;
+      cols[c].push({ item, idx });
+      heights[c] += item.h / item.w;
+    });
+    return cols;
+  }, [filtered]);
+
   const open = useCallback((idx: number) => setLightbox(idx), []);
   const close = useCallback(() => setLightbox(null), []);
   const next = useCallback(
@@ -97,51 +111,31 @@ export function GalleryGrid() {
         })}
       </div>
 
-      {/* Masonry — full-aspect, uncropped, high-resolution */}
-      <motion.div
-        layout
-        className="mt-12 columns-1 gap-6 lg:columns-2 [&>*]:mb-6"
-      >
-        <AnimatePresence mode="popLayout">
-          {filtered.map((item, idx) => (
-            <motion.button
-              key={item.src}
-              layout
-              initial={{ opacity: 0, scale: 0.92, y: 20 }}
-              animate={{ opacity: 1, scale: 1, y: 0 }}
-              exit={{ opacity: 0, scale: 0.92 }}
-              transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
-              onClick={() => open(idx)}
-              className="group relative block w-full break-inside-avoid overflow-hidden rounded-3xl bg-ink shadow-soft ring-1 ring-black/5 transition-shadow hover:shadow-card focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-red"
-            >
-              <Image
-                src={item.src}
-                alt={item.alt}
-                width={item.w}
-                height={item.h}
-                quality={90}
-                loading="lazy"
-                sizes="(max-width:1024px) 100vw, 50vw"
-                className="h-auto w-full object-cover transition-transform duration-[1.1s] ease-out group-hover:scale-[1.05]"
-              />
-              <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-ink/85 via-ink/10 to-transparent opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
-              <div className="absolute inset-x-0 bottom-0 flex translate-y-3 items-end justify-between p-5 opacity-0 transition-all duration-500 group-hover:translate-y-0 group-hover:opacity-100">
-                <div className="text-left">
-                  <span className="rounded-full bg-white/15 px-2.5 py-1 text-[10px] font-semibold uppercase tracking-wider text-white backdrop-blur">
-                    {item.category}
-                  </span>
-                  <p className="mt-2 font-display text-sm font-bold text-white">
-                    {item.title}
-                  </p>
-                </div>
-                <span className="grid h-10 w-10 shrink-0 place-items-center rounded-full bg-white/90 text-ink">
-                  <ZoomIn className="h-5 w-5" />
-                </span>
-              </div>
-            </motion.button>
-          ))}
-        </AnimatePresence>
-      </motion.div>
+      {/* Two-column masonry — natural heights in the middle, but the first
+          tile of each column shares an aspect ratio (flush top row) and the
+          last tile grows to fill so both columns end level (flush bottom). */}
+      <div className="mt-12 flex flex-col gap-6 sm:flex-row sm:items-stretch">
+        {columns.map((col, c) => (
+          <div key={c} className="flex flex-1 flex-col gap-6">
+            <AnimatePresence mode="popLayout">
+              {col.map(({ item, idx }, i) => (
+                <Tile
+                  key={item.src}
+                  item={item}
+                  onOpen={() => open(idx)}
+                  variant={
+                    i === 0
+                      ? "top"
+                      : col.length > 1 && i === col.length - 1
+                        ? "fill"
+                        : "natural"
+                  }
+                />
+              ))}
+            </AnimatePresence>
+          </div>
+        ))}
+      </div>
 
       {/* Lightbox */}
       <AnimatePresence>
@@ -191,7 +185,7 @@ export function GalleryGrid() {
               <ChevronRight className="h-6 w-6" />
             </button>
 
-            {/* Image */}
+            {/* Lightbox Image */}
             <motion.div
               key={current.src}
               initial={{ opacity: 0, scale: 0.95 }}
@@ -223,5 +217,72 @@ export function GalleryGrid() {
         )}
       </AnimatePresence>
     </>
+  );
+}
+
+function Tile({
+  item,
+  onOpen,
+  variant = "natural",
+}: {
+  item: GalleryItem;
+  onOpen: () => void;
+  variant?: "natural" | "top" | "fill";
+}) {
+  const cropped = variant !== "natural";
+  return (
+    <motion.button
+      layout
+      initial={{ opacity: 0, scale: 0.92, y: 20 }}
+      animate={{ opacity: 1, scale: 1, y: 0 }}
+      exit={{ opacity: 0, scale: 0.92 }}
+      transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
+      onClick={onOpen}
+      className={cn(
+        "group relative block w-full overflow-hidden rounded-3xl bg-ink shadow-soft ring-1 ring-black/5 transition-shadow hover:shadow-card focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-red",
+        // Top tile: fixed aspect so both columns' first row matches height.
+        variant === "top" && "aspect-[4/3]",
+        // Last tile: grows to fill the (stretched) column so bottoms align.
+        variant === "fill" &&
+          "aspect-[4/3] sm:aspect-auto sm:min-h-[14rem] sm:flex-1",
+      )}
+    >
+      {cropped ? (
+        <Image
+          src={item.src}
+          alt={item.alt}
+          fill
+          quality={90}
+          loading="lazy"
+          sizes="(max-width:640px) 100vw, 50vw"
+          className="object-cover transition-transform duration-[1.1s] ease-out group-hover:scale-[1.05]"
+        />
+      ) : (
+        <Image
+          src={item.src}
+          alt={item.alt}
+          width={item.w}
+          height={item.h}
+          quality={90}
+          loading="lazy"
+          sizes="(max-width:640px) 100vw, 50vw"
+          className="h-auto w-full object-cover transition-transform duration-[1.1s] ease-out group-hover:scale-[1.05]"
+        />
+      )}
+      <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-ink/85 via-ink/10 to-transparent opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
+      <div className="absolute inset-x-0 bottom-0 flex translate-y-3 items-end justify-between p-5 opacity-0 transition-all duration-500 group-hover:translate-y-0 group-hover:opacity-100">
+        <div className="text-left">
+          <span className="rounded-full bg-white/15 px-2.5 py-1 text-[10px] font-semibold uppercase tracking-wider text-white backdrop-blur">
+            {item.category}
+          </span>
+          <p className="mt-2 font-display text-sm font-bold text-white">
+            {item.title}
+          </p>
+        </div>
+        <span className="grid h-10 w-10 shrink-0 place-items-center rounded-full bg-white/90 text-ink">
+          <ZoomIn className="h-5 w-5" />
+        </span>
+      </div>
+    </motion.button>
   );
 }
