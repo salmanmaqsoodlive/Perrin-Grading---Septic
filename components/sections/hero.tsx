@@ -128,7 +128,7 @@ export function Hero() {
             </div>
             <div className="flex items-center gap-2 text-sm text-white/70">
               <ShieldCheck className="h-5 w-5 text-brand-red-soft" />
-              25+ years moving dirt the right way
+              10+ years moving dirt the right way
             </div>
           </motion.div>
         </div>

@@ -158,7 +158,7 @@ export const services: Service[] = [
 ];
 
 export const stats = [
-  { value: 25, suffix: "+", label: "Years of experience" },
+  { value: 10, suffix: "+", label: "Years of experience" },
   { value: 1200, suffix: "+", label: "Projects completed" },
   { value: 100, suffix: "%", label: "Licensed & insured" },
   { value: 4.9, suffix: "★", label: "Average rating", decimals: 1 },

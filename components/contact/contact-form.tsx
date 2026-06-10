@@ -2,18 +2,69 @@
 
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Send, CheckCircle2, Loader2 } from "lucide-react";
+import { Send, CheckCircle2, Loader2, AlertCircle } from "lucide-react";
 import { services } from "@/data/site";
 import { staggerItem, StaggerGroup } from "@/components/ui/reveal";
 
+type FormState = {
+  name: string;
+  phone: string;
+  email: string;
+  service: string;
+  message: string;
+};
+
+const emptyForm: FormState = {
+  name: "",
+  phone: "",
+  email: "",
+  service: "",
+  message: "",
+};
+
 export function ContactForm() {
   const [status, setStatus] = useState<"idle" | "sending" | "sent">("idle");
+  const [error, setError] = useState("");
+  const [form, setForm] = useState<FormState>(emptyForm);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const update =
+    (key: keyof FormState) =>
+    (
+      e: React.ChangeEvent<
+        HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement
+      >,
+    ) =>
+      setForm((prev) => ({ ...prev, [key]: e.target.value }));
+
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setStatus("sending");
-    // Demo submission — wire up to your backend / email service.
-    setTimeout(() => setStatus("sent"), 1400);
+    setError("");
+    try {
+      const res = await fetch(
+        "https://formsubmit.co/ajax/greg.hodge@soulardtechnology.net",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+            Accept: "application/json",
+          },
+          body: JSON.stringify({
+            ...form,
+            _subject: "New estimate request — Perrin's Grading & Septic",
+            _template: "table",
+          }),
+        },
+      );
+      const data = await res.json();
+      if (data.success !== "true" && data.success !== true)
+        throw new Error(data.message || "Failed to send message");
+      setStatus("sent");
+      setForm(emptyForm);
+    } catch (err: any) {
+      setError(err.message || "Something went wrong. Please try again.");
+      setStatus("idle");
+    }
   };
 
   const field =
@@ -75,6 +126,8 @@ export function ContactForm() {
                 <input
                   id="name"
                   required
+                  value={form.name}
+                  onChange={update("name")}
                   placeholder="Name"
                   className={field}
                 />
@@ -87,6 +140,8 @@ export function ContactForm() {
                   id="phone"
                   type="tel"
                   required
+                  value={form.phone}
+                  onChange={update("phone")}
                   placeholder="Phone"
                   className={field}
                 />
@@ -98,6 +153,8 @@ export function ContactForm() {
                 <input
                   id="email"
                   type="email"
+                  value={form.email}
+                  onChange={update("email")}
                   placeholder="Email"
                   className={field}
                 />
@@ -108,7 +165,8 @@ export function ContactForm() {
               <motion.div variants={staggerItem} className="relative sm:col-span-2">
                 <select
                   id="service"
-                  defaultValue=""
+                  value={form.service}
+                  onChange={update("service")}
                   required
                   className="w-full appearance-none rounded-2xl border border-black/10 bg-white px-4 py-4 text-ink outline-none transition-all focus:border-brand-red/60 focus:ring-2 focus:ring-brand-red/15"
                 >
@@ -128,6 +186,8 @@ export function ContactForm() {
                   id="message"
                   rows={4}
                   required
+                  value={form.message}
+                  onChange={update("message")}
                   placeholder="Message"
                   className={`${field} resize-none`}
                 />
@@ -136,6 +196,13 @@ export function ContactForm() {
                 </label>
               </motion.div>
             </StaggerGroup>
+
+            {error && (
+              <p className="mt-5 flex items-start gap-2 rounded-2xl bg-brand-red/[0.06] px-4 py-3 text-sm text-brand-red">
+                <AlertCircle className="mt-0.5 h-4 w-4 shrink-0" />
+                {error}
+              </p>
+            )}
 
             <motion.button
               type="submit"

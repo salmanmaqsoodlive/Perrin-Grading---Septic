@@ -27,12 +27,12 @@ export function Footer() {
           {/* Brand column */}
           <div className="lg:col-span-4">
             <Link href="/" className="flex items-center gap-3">
-              <span className="grid h-20 w-20 place-items-center">
+              <span className="grid h-28 w-28 place-items-center">
                 <Image
                   src="/logo.png"
                   alt={site.legalName}
-                  width={80}
-                  height={80}
+                  width={112}
+                  height={112}
                   className="h-full w-full object-contain"
                 />
               </span>
@@ -60,22 +60,6 @@ export function Footer() {
               <span className="text-xs font-medium text-white/70">
                 Trusted by hundreds of neighbors
               </span>
-            </div>
-            <div className="mt-6 flex gap-3">
-              {[
-                { Icon: Facebook, href: site.social.facebook },
-                { Icon: Instagram, href: site.social.instagram },
-              ].map(({ Icon, href }, i) => (
-                <motion.a
-                  key={i}
-                  href={href}
-                  whileHover={{ y: -3 }}
-                  className="grid h-10 w-10 place-items-center rounded-full bg-white/5 text-white/70 ring-1 ring-white/10 transition-colors hover:bg-white/10 hover:text-white"
-                  aria-label="Social link"
-                >
-                  <Icon className="h-4 w-4" />
-                </motion.a>
-              ))}
             </div>
           </div>
 
@@ -151,6 +135,22 @@ export function Footer() {
                 {site.hours}
               </li>
             </ul>
+            <div className="mt-6 flex gap-3">
+              {[
+                { Icon: Facebook, href: site.social.facebook },
+                { Icon: Instagram, href: site.social.instagram },
+              ].map(({ Icon, href }, i) => (
+                <motion.a
+                  key={i}
+                  href={href}
+                  whileHover={{ y: -3 }}
+                  className="grid h-10 w-10 place-items-center rounded-full bg-white/5 text-white/70 ring-1 ring-white/10 transition-colors hover:bg-white/10 hover:text-white"
+                  aria-label="Social link"
+                >
+                  <Icon className="h-4 w-4" />
+                </motion.a>
+              ))}
+            </div>
           </div>
         </div>
 
