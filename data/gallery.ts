@@ -27,6 +27,17 @@ const item = (
 });
 
 export const galleryItems: GalleryItem[] = [
+  // —— Before & After ——
+  item("before-grading.jpg", "Before & After", "Before — Overgrown, Unusable Lot", 1800, 1012),
+  item("after-grading.jpg", "Before & After", "After — Graded & Build-Ready", 1800, 1012),
+  item("ba-3.jpg", "Before & After", "Before — Overgrown Roadside Brush", 1440, 1440),
+  item("ba-4.jpg", "Before & After", "After — Cleared Roadside Field", 1440, 1440),
+  item("ba-5.jpg", "Before & After", "Before — Old Barn & Outbuildings", 1440, 1440),
+  item("ba-6.jpg", "Before & After", "During — Structure Demolition", 1440, 1440),
+  item("ba-7.jpg", "Before & After", "After — Cleared & Graded Lot", 1440, 1440),
+  item("ba-1.jpg", "Before & After", "Graded & Shaped Building Pad", 1440, 1440),
+  item("ba-2.jpg", "Before & After", "Finished Retention Pond", 1440, 1440),
+
   // —— Land Grading ——
   item("177.jpeg", "Land Grading", "Finished Driveway & Lawn", 4032, 3024),
   item(

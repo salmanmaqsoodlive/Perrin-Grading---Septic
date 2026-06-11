@@ -5,7 +5,6 @@ import { Navbar } from "@/components/navbar";
 import { Footer } from "@/components/footer";
 import { ScrollProgress } from "@/components/scroll-progress";
 import { FloatingCTA } from "@/components/floating-cta";
-import { Preloader } from "@/components/preloader";
 import { site } from "@/data/site";
 
 const body = Plus_Jakarta_Sans({
@@ -94,7 +93,6 @@ export default function RootLayout({
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(orgSchema) }}
         />
-        <Preloader />
         <ScrollProgress />
         <Navbar />
         <main>{children}</main>

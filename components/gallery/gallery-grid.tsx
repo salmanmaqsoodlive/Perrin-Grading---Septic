@@ -71,8 +71,10 @@ export function GalleryGrid() {
 
   return (
     <>
-      {/* Filters */}
-      <div className="flex flex-wrap items-center justify-center gap-2.5">
+      {/* Filters — always one line; breaks out to the full container width and
+          scrolls horizontally when the chips don't fit, so none get clipped. */}
+      <div className="-mx-6 overflow-x-auto px-6 sm:-mx-8 sm:px-8 lg:-mx-10 lg:px-10 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
+        <div className="mx-auto flex w-max flex-nowrap items-center gap-2.5">
         {galleryCategories.map((cat) => {
           const isActive = active === cat;
           const count =
@@ -84,7 +86,7 @@ export function GalleryGrid() {
               key={cat}
               onClick={() => setActive(cat)}
               className={cn(
-                "relative rounded-full px-5 py-2.5 text-sm font-semibold transition-colors",
+                "relative shrink-0 whitespace-nowrap rounded-full px-5 py-2.5 text-sm font-semibold transition-colors",
                 isActive ? "text-white" : "text-ink/60 hover:text-ink"
               )}
             >
@@ -109,6 +111,7 @@ export function GalleryGrid() {
             </button>
           );
         })}
+        </div>
       </div>
 
       {/* Two-column masonry — natural heights in the middle, but the first
