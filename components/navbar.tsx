@@ -62,11 +62,11 @@ export function Navbar() {
           <span className="flex flex-col leading-none">
             <span
               className={cn(
-                "font-display text-[15px] font-bold uppercase tracking-[0.3em] transition-colors",
+                "whitespace-nowrap font-display text-[13px] font-bold uppercase tracking-[0.3em] [word-spacing:0.5em] transition-colors sm:text-[15px]",
                 scrolled || open ? "text-ink" : "text-white",
               )}
             >
-              Perrin&apos;s
+              Charlie Perrin
             </span>
             <span
               className={cn(
@@ -74,7 +74,7 @@ export function Navbar() {
                 scrolled || open ? "text-ink/55" : "text-white/70",
               )}
             >
-              Grading, Septic &amp; Earthwork
+              Grading and Septic LLC
             </span>
           </span>
         </Link>

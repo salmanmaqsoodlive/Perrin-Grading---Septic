@@ -37,11 +37,11 @@ export function Footer() {
                 />
               </span>
               <span className="flex flex-col leading-none">
-                <span className="font-display text-lg font-bold uppercase tracking-[0.3em]">
-                  Perrin&apos;s
+                <span className="whitespace-nowrap font-display text-lg font-bold uppercase tracking-[0.3em] [word-spacing:0.5em]">
+                  Charlie Perrin
                 </span>
                 <span className="text-xs text-white/55">
-                  Grading &amp; Septic LLC
+                  Grading and Septic LLC
                 </span>
               </span>
             </Link>

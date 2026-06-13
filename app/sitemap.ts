@@ -1,7 +1,7 @@
 import type { MetadataRoute } from "next";
 
 const base = "https://perrinsgrading.com";
-const routes = ["", "/about", "/services", "/gallery", "/contact"];
+const routes = ["", "/about", "/services", "/before-after", "/gallery", "/contact"];
 
 export default function sitemap(): MetadataRoute.Sitemap {
   return routes.map((route) => ({

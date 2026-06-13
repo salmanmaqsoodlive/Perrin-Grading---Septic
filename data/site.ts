@@ -8,8 +8,8 @@ import {
 } from "lucide-react";
 
 export const site = {
-  name: "Perrin's Grading & Septic",
-  legalName: "Perrin's Grading & Septic LLC",
+  name: "Charlie Perrin Grading and Septic",
+  legalName: "Charlie Perrin Grading and Septic LLC",
   slogan: "Great People, Great Company",
   shortDesc:
     "Professional land grading and septic system installation & repair, built on honest work and decades of dirt-moving experience.",
@@ -37,6 +37,7 @@ export const nav = [
   { label: "Home", href: "/" },
   { label: "About", href: "/about" },
   { label: "Services", href: "/services" },
+  { label: "Before & After", href: "/before-after" },
   { label: "Gallery", href: "/gallery" },
   { label: "Contact", href: "/contact" },
 ];
