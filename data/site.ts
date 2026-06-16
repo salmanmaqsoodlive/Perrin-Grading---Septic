@@ -69,7 +69,7 @@ export const services: Service[] = [
       "Finish grading",
     ],
     accent: "green",
-    image: "/gallery/work-09.jpg",
+    image: "/gallery/finish-grading.jpeg",
   },
   {
     slug: "septic-installation-repair",
@@ -86,7 +86,7 @@ export const services: Service[] = [
       "Diagnostics & emergency response",
     ],
     accent: "blue",
-    image: "/gallery/work-12.jpg",
+    image: "/gallery/septic-system-installation.jpg",
   },
   {
     slug: "excavation",
@@ -103,7 +103,7 @@ export const services: Service[] = [
       "Backfill & compaction",
     ],
     accent: "green",
-    image: "/gallery/work-20.jpg",
+    image: "/gallery/excavation-and-earthwork.webp",
   },
   {
     slug: "land-clearing",
